@@ -4,7 +4,15 @@
 
 /* stylelint-disable number-max-precision */
 
-/* stylelint-disable custom-property-pattern, number-max-precision */
+/* More procision required! */
+
+/* stylelint-disable custom-property-pattern, number-max-precision, value-keyword-case */
+
+/* */
+
+/* stylelint-disable value-keyword-case */
+
+/* too many components refer to EconSans */
 
 @font-face {
   font-family: EconSans;
@@ -114,6 +122,8 @@
 
 /* stylelint-disable selector-no-type */
 
+/* setting base font size on html - no default selector */
+
 html {
   font-size: 18px;
   line-height: 1.35;
@@ -134,6 +144,12 @@ body {
  * Colors
  */
 
+/* stylelint-disable no-indistinguishable-colors */
+
+/* to pass linting against --color-thimphu --color-berlin */
+
+/* stylelint-enable no-indistinguishable-colors */
+
 .icon {
   display: inline-block;
   width: 1em;
@@ -144,6 +160,8 @@ body {
 }
 
 /* stylelint-disable selector-no-universal */
+
+/* not going to list all the classes. */
 
 .ec-footer * {
   box-sizing: border-box;
@@ -175,18 +193,16 @@ body {
 
 /* A couple of footer-specific resets */
 
-/* stylelint-disable selector-no-type */
-
-.ec-footer a:hover,
-.ec-footer a:focus {
+.ec-footer__link:hover,
+.ec-footer__link:focus {
   opacity: 0.6;
 }
 
-.ec-footer a:active {
+.ec-footer__link:active {
   opacity: 0.3;
 }
 
-.ec-footer ul {
+.ec-footer .list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -194,15 +210,10 @@ body {
 
 /* This makes the links have a bigger click area */
 
-.ec-footer a {
-  display: block;
-  text-decoration: none;
-}
-
-/* stylelint-enable selector-no-type */
-
 .ec-footer__link {
+  display: block;
   color: #b6b6b6;
+  text-decoration: none;
 }
 
 .ec-footer__quote-paragraph {
@@ -269,6 +280,8 @@ body {
 
 /* stylelint-disable selector-no-type */
 
+/* no class to anchor off */
+
 .ec-footer__list--social .list__item svg {
   display: block;
   margin: auto;
@@ -291,6 +304,8 @@ body {
 
 /* stylelint-disable selector-no-type */
 
+/* no class to anchor off */
+
 .ec-footer__quote em {
   font-family: 'MiloSerifPro', Palatino, serif;
 }
@@ -302,8 +317,6 @@ body {
     display: none;
   }
 }
-
-/* stylelint-enable selector-no-type */
 
 .ec-footer__footnote .ec-footer__copyright {
   color: #7a7a7a;
@@ -341,7 +354,6 @@ body {
   }
   .ec-footer__menu {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     margin: 2.5em 0;
@@ -354,14 +366,12 @@ body {
   /* footnote and copyright go side by side */
   .ec-footer__footnote {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     border-top: 1px solid #7a7a7a;
   }
   .ec-footer__copyright {
     -webkit-box-flex: 1;
-    -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1;
     text-align: right;
@@ -378,7 +388,6 @@ body {
   }
   .ec-footer__list--social {
     -webkit-box-flex: 1;
-    -webkit-flex: 1 0 0;
         -ms-flex: 1 0 0;
             flex: 1 0 0;
     border-right: 1px solid #7a7a7a;
@@ -389,7 +398,6 @@ body {
   }
   .ec-footer__list--economist {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 1 30%;
         -ms-flex: 0 1 30%;
             flex: 0 1 30%;
   }

@@ -17,7 +17,6 @@ pre[class*&#x3D;&quot;language-&quot;] {
 	background: none;
 	text-shadow: 0 1px white;
 	font-family: Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;
-	direction: ltr;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
@@ -196,7 +195,7 @@ pre[class*&#x3D;&quot;language-&quot;] {
   <body>
         <h1 class="component-title">
       @economist/component-footer
-      <span>(v0.0.0-development)</span>
+      <span>(v4.0.2)</span>
     </h1>
     <div id="component-preview">
       <script>
@@ -218,10 +217,122 @@ pre[class*&#x3D;&quot;language-&quot;] {
     </div>
     <div class="component-panel">
       <h2 id="example" class="component-panel-heading"><a href="#example">Example</a></h2>
-      <pre><code>    <span class="token keyword" >import</span> links <span class="token keyword" >from</span> <span class="token string" >'./links'</span><span class="token punctuation" >;</span>
+      <pre><code>    <span class="token keyword" >import</span> <span class="token string" >'babel-polyfill'</span><span class="token punctuation" >;</span>
     <span class="token keyword" >import</span> React <span class="token keyword" >from</span> <span class="token string" >'react'</span><span class="token punctuation" >;</span>
-    <span class="token keyword" >import</span> Footer <span class="token keyword" >from</span> <span class="token string" >'./index'</span><span class="token punctuation" >;</span>
+    <span class="token keyword" >import</span> Footer <span class="token keyword" >from</span> <span class="token string" >'./'</span><span class="token punctuation" >;</span>
     
+    <span class="token keyword" >const</span> links <span class="token operator" >=</span> <span class="token punctuation" >{</span>
+      customer<span class="token punctuation" >:</span> <span class="token punctuation" >[</span>
+        <span class="token punctuation" >{</span>
+          title<span class="token punctuation" >:</span> <span class="token string" >'Subscribe'</span><span class="token punctuation" >,</span>
+          href<span class="token punctuation" >:</span> <span class="token string" >'http://www.economistgroupmedia.com'</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >{</span>
+          title<span class="token punctuation" >:</span> <span class="token string" >'Contact us'</span><span class="token punctuation" >,</span>
+          href<span class="token punctuation" >:</span> <span class="token string" >'http://www.economist.com/rights/'</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >{</span>
+          title<span class="token punctuation" >:</span> <span class="token string" >'Help'</span><span class="token punctuation" >,</span>
+          href<span class="token punctuation" >:</span> <span class="token string" >'http://www.economist.com/rights/'</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+      <span class="token punctuation" >]</span><span class="token punctuation" >,</span>
+      economist<span class="token punctuation" >:</span> <span class="token punctuation" >[</span>
+        <span class="token punctuation" >{</span>
+          title<span class="token punctuation" >:</span> <span class="token string" >'Advertise'</span><span class="token punctuation" >,</span>
+          href<span class="token punctuation" >:</span> <span class="token string" >'products/subscribe'</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >{</span>
+          title<span class="token punctuation" >:</span> <span class="token string" >'Editorial Staff'</span><span class="token punctuation" >,</span>
+          href<span class="token punctuation" >:</span> <span class="token string" >'node/21013093'</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >{</span>
+          title<span class="token punctuation" >:</span> <span class="token string" >'Reprints'</span><span class="token punctuation" >,</span>
+          href<span class="token punctuation" >:</span> <span class="token string" >'node/21017280'</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >{</span>
+          title<span class="token punctuation" >:</span> <span class="token string" >'Site Map'</span><span class="token punctuation" >,</span>
+          href<span class="token punctuation" >:</span> <span class="token string" >'node/21554326'</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >{</span>
+          title<span class="token punctuation" >:</span> <span class="token string" >'Careers'</span><span class="token punctuation" >,</span>
+          href<span class="token punctuation" >:</span> <span class="token string" >'node/21013080'</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+      <span class="token punctuation" >]</span><span class="token punctuation" >,</span>
+      social<span class="token punctuation" >:</span> <span class="token punctuation" >[</span>
+        <span class="token punctuation" >{</span>
+          title<span class="token punctuation" >:</span> <span class="token string" >'Facebook'</span><span class="token punctuation" >,</span>
+          meta<span class="token punctuation" >:</span> <span class="token string" >'facebook'</span><span class="token punctuation" >,</span>
+          href<span class="token punctuation" >:</span> <span class="token string" >'https://www.economist.com'</span><span class="token punctuation" >,</span>
+          internal<span class="token punctuation" >:</span> <span class="token boolean" >false</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >{</span>
+          title<span class="token punctuation" >:</span> <span class="token string" >'Twitter'</span><span class="token punctuation" >,</span>
+          meta<span class="token punctuation" >:</span> <span class="token string" >'twitter'</span><span class="token punctuation" >,</span>
+          href<span class="token punctuation" >:</span> <span class="token string" >'https://www.economist.com'</span><span class="token punctuation" >,</span>
+          internal<span class="token punctuation" >:</span> <span class="token boolean" >false</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >{</span>
+          title<span class="token punctuation" >:</span> <span class="token string" >'Google'</span><span class="token punctuation" >,</span>
+          meta<span class="token punctuation" >:</span> <span class="token string" >'googleplus'</span><span class="token punctuation" >,</span>
+          href<span class="token punctuation" >:</span> <span class="token string" >'https://www.economist.com'</span><span class="token punctuation" >,</span>
+          internal<span class="token punctuation" >:</span> <span class="token boolean" >false</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >{</span>
+          title<span class="token punctuation" >:</span> <span class="token string" >'Linkedin'</span><span class="token punctuation" >,</span>
+          meta<span class="token punctuation" >:</span> <span class="token string" >'linkedin'</span><span class="token punctuation" >,</span>
+          href<span class="token punctuation" >:</span> <span class="token string" >'https://www.economist.com'</span><span class="token punctuation" >,</span>
+          internal<span class="token punctuation" >:</span> <span class="token boolean" >false</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >{</span>
+          title<span class="token punctuation" >:</span> <span class="token string" >'Tumblr'</span><span class="token punctuation" >,</span>
+          meta<span class="token punctuation" >:</span> <span class="token string" >'tumblr'</span><span class="token punctuation" >,</span>
+          href<span class="token punctuation" >:</span> <span class="token string" >'https://www.economist.com'</span><span class="token punctuation" >,</span>
+          internal<span class="token punctuation" >:</span> <span class="token boolean" >false</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >{</span>
+          title<span class="token punctuation" >:</span> <span class="token string" >'Instagram'</span><span class="token punctuation" >,</span>
+          meta<span class="token punctuation" >:</span> <span class="token string" >'instagram'</span><span class="token punctuation" >,</span>
+          href<span class="token punctuation" >:</span> <span class="token string" >'https://www.economist.com'</span><span class="token punctuation" >,</span>
+          internal<span class="token punctuation" >:</span> <span class="token boolean" >false</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >{</span>
+          title<span class="token punctuation" >:</span> <span class="token string" >'Youtube'</span><span class="token punctuation" >,</span>
+          meta<span class="token punctuation" >:</span> <span class="token string" >'youtube'</span><span class="token punctuation" >,</span>
+          href<span class="token punctuation" >:</span> <span class="token string" >'https://www.economist.com'</span><span class="token punctuation" >,</span>
+          internal<span class="token punctuation" >:</span> <span class="token boolean" >false</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >{</span>
+          title<span class="token punctuation" >:</span> <span class="token string" >'rss'</span><span class="token punctuation" >,</span>
+          meta<span class="token punctuation" >:</span> <span class="token string" >'rss'</span><span class="token punctuation" >,</span>
+          href<span class="token punctuation" >:</span> <span class="token string" >'https://www.economist.com'</span><span class="token punctuation" >,</span>
+          internal<span class="token punctuation" >:</span> <span class="token boolean" >false</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >{</span>
+          title<span class="token punctuation" >:</span> <span class="token string" >'mail'</span><span class="token punctuation" >,</span>
+          meta<span class="token punctuation" >:</span> <span class="token string" >'mail'</span><span class="token punctuation" >,</span>
+          href<span class="token punctuation" >:</span> <span class="token string" >'https://www.economist.com'</span><span class="token punctuation" >,</span>
+          internal<span class="token punctuation" >:</span> <span class="token boolean" >true</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+      <span class="token punctuation" >]</span><span class="token punctuation" >,</span>
+      business<span class="token punctuation" >:</span> <span class="token punctuation" >[</span>
+        <span class="token punctuation" >{</span>
+          title<span class="token punctuation" >:</span> <span class="token string" >'Terms of Use'</span><span class="token punctuation" >,</span>
+          href<span class="token punctuation" >:</span> <span class="token string" >'node/21013093'</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >{</span>
+          title<span class="token punctuation" >:</span> <span class="token string" >'Privacy'</span><span class="token punctuation" >,</span>
+          href<span class="token punctuation" >:</span> <span class="token string" >'node/21554326'</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >{</span>
+          title<span class="token punctuation" >:</span> <span class="token string" >'Cookies'</span><span class="token punctuation" >,</span>
+          href<span class="token punctuation" >:</span> <span class="token string" >'http://www.economistgroup.com/results_and_governance/governance/privacy'</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >{</span>
+          title<span class="token punctuation" >:</span> <span class="token string" >'Accessibility'</span><span class="token punctuation" >,</span>
+          href<span class="token punctuation" >:</span> <span class="token string" >'http://www.economistgroup.com/results_and_governance/governance/privacy'</span><span class="token punctuation" >,</span>
+        <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+      <span class="token punctuation" >]</span><span class="token punctuation" >,</span>
+    <span class="token punctuation" >}</span><span class="token punctuation" >;</span>
     <span class="token keyword" >const</span> quote <span class="token operator" >=</span> <span class="token string" >'Published since September 1843 to take part in &lt;br/>&lt;em>“a severe '</span> <span class="token operator" >+</span>
       <span class="token string" >'contest between intelligence, which presses forward,&lt;br/>and an unworthy, timid '</span> <span class="token operator" >+</span>
       <span class="token string" >'ignorance obstructing our progress.”&lt;/em>'</span><span class="token punctuation" >;</span>
