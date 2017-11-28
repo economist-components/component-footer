@@ -7,6 +7,13 @@
   --icon-canvas-size: 38px;
   --icon-size: 30px;
   --icon-blank-space: calc(0.25 * 38px);
+  --signup-footer-min-width: 240px;
+  --signup-max-width: 450px;
+  --signup-input-border-radius: 5px;
+  --signup-input-height: 40px;
+  --signup-button-width: 90px;
+  --signup-input-min-width: 275px;
+  --signup-input-placeholder-left: 10px;
 }
 
 /* stylelint-disable selector-no-universal */
@@ -250,3 +257,90 @@
     padding-right: 0;
   }
 }
+
+/* Email signup form styles here */
+
+.signup-footer {
+  background-color: inherit;
+  padding: var(--grid-spacing-sheep) var(--grid-spacing-donkey);
+  max-width: var(--signup-max-width);
+
+  & .signup-footer__header {
+    justify-content: center;
+    min-width
+    margin-bottom: var(--grid-spacing-hedgehog);
+  }
+
+  & .signup-footer__header-title {
+    font-size: var(--text-size-step-2);
+    font-weight: 600;
+    color: var(--color-prague);
+  }
+
+  & .signup-footer__header-subtitle {
+    font-size: calc(var(--text-size-step-2)- 0.04em);
+    color: var(--color-cardiff);
+    opacity: 0.6;
+  }
+
+  
+  & .signup-footer__body {
+    display: flex;
+    flex-direction: row;
+    & .signup--footer-input {
+      color: var(--color-moscow);
+      opacity: 0.5;
+    }
+  
+    
+    & .signup-footer-input {  
+      border-top-left-radius: var(--signup-input-border-radius);
+      border-bottom-left-radius: var(--signup-input-border-radius);
+      border-style: none;
+      font-size: var(--text-size-step-1);
+      min-height: var(--signup-input-height);
+      min-width: var(--signup-input-min-width);
+    }
+
+    input[type='email']::-webkit-input-placeholder { 
+      color: var(--color-cardiff);
+      opacity: 0.8;
+      padding-left: var(--signup-input-placeholder-left);
+    }
+
+    input[type='email']::-moz-placeholder { 
+      color: var(--color-cardiff);
+      opacity: 0.8;
+      padding-left: var(--signup-input-placeholder-left);
+    }
+
+    & .signup-footer__signup-button {
+      background-color: var(--color-chicago);
+      border-top-left-radius: 0;
+      border-top-right-radius: var(--signup-input-border-radius);
+      border-bottom-left-radius: 0;
+      border: none;
+      border-style: none;
+      border-bottom-right-radius: var(--signup-input-border-radius);
+      color: var(--color-thimphu);
+      font-size: var(--text-size-step--1);
+      font-weight: 600;
+      min-height: var(--signup-input-height);
+      min-width: var(--signup-button-width);
+      cursor: pointer;
+      vertical-align: bottom;
+    }
+  }
+}
+
+@media (min-width: 1000px){
+  .signup-footer{
+    border-right: 1px solid var(--color-moscow);
+  }
+}
+@media (max-width: 1000px){
+  .signup-footer{
+    border-top: 1px solid var(--color-moscow);
+  }
+}
+

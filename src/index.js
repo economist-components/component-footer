@@ -5,6 +5,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from '@economist/component-icon';
 import slugger from 'slugger';
+import NewsletterSubscription from './signup-letter-form';
 const iconSize = '48px';
 export function targetIfNeeded({ internal }) {
   if (internal === false) {
@@ -137,6 +138,9 @@ export default function Footer({
     );
     /* eslint-enable react/no-danger */
   }
+  // controlling variable for showing content
+  const enableSignup = true;
+
   const listsOfLinks = data; // eslint-disable-line
   const currentYear = new Date().getFullYear();
   const content = (
@@ -154,6 +158,9 @@ export default function Footer({
           </ul>
           {renderNewsletterLink(listsOfLinks.social, LinkComponent, i13n)}
         </div>
+        {
+          enableSignup && <NewsletterSubscription />
+        }
         <div className="ec-footer__list ec-footer__list--economist">
           <ul className="list">
             {renderListOfLinks(listsOfLinks.economist, {}, LinkComponent, i13n)}
