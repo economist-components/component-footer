@@ -117,6 +117,7 @@ export default function Footer({
   quoteNoMobile = false,
   LinkComponent,
   i13n,
+  children,
 }) {
   if (quote) {
     const quoteParagraph = () => ({
@@ -154,6 +155,7 @@ export default function Footer({
           </ul>
           {renderNewsletterLink(listsOfLinks.social, LinkComponent, i13n)}
         </div>
+        {children}
         <div className="ec-footer__list ec-footer__list--economist">
           <ul className="list">
             {renderListOfLinks(listsOfLinks.economist, {}, LinkComponent, i13n)}
@@ -205,5 +207,6 @@ if (process.env.NODE_ENV !== 'production') {
       }),
     }),
     LinkComponent: PropTypes.func,
+    children: PropTypes.children,
   };
 }
