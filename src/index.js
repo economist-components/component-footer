@@ -74,7 +74,7 @@ if (process.env.NODE_ENV !== 'production') {
       customer: PropTypes.arrayOf(PropTypes.object),
       economist: PropTypes.arrayOf(PropTypes.object),
       social: PropTypes.arrayOf(PropTypes.object),
-      business: PropTypes.arrayOf(PropTypes.object),
+      business: PropTypes.array,
     }),
     quote: PropTypes.string,
     quoteNoMobile: PropTypes.bool,

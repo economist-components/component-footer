@@ -2,6 +2,17 @@ import 'babel-polyfill';
 import React from 'react';
 import Footer from './';
 
+export function overridingComponent(props) {
+  function alertMe() {
+    document.write('Test');
+  }
+  return (
+    <button onClick={alertMe} {...props}>
+      Overriden Link
+    </button>
+  );
+}
+
 const links = {
   customer: [
     {
@@ -104,10 +115,13 @@ const links = {
       title: 'Terms of Use',
       href: 'node/21013093',
     },
-    {
-      title: 'Privacy',
-      href: 'node/21554326',
-    },
+    [
+      {
+        title: 'Privacy',
+        href: 'node/21554326',
+      },
+      overridingComponent,
+    ],
     {
       title: 'Cookies',
       href: 'http://www.economistgroup.com/results_and_governance/governance/privacy',

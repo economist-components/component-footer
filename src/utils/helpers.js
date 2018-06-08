@@ -47,40 +47,50 @@ export function renderListOfLinks(listOfLinks, {
   iconColor = '#B6B6B6',
 } = {}, LinkComponent, i13n) {
   const i13nPosition = i13n ? position.next().value : null;
-  return Array.isArray(listOfLinks) && listOfLinks.map((link, index) => {
-    let linkContents = link.title;
-    if (useIcons) {
-      linkContents = <Icon icon={link.meta} color={iconColor} size={iconSize} />;
-    }
-    const Link = createLinkTag(LinkComponent, i13n);
-    const i13nProps = createI13nProps(link, i13n, { position: `${ i13nPosition }.${ index + 1 }` });
-    if (link.internal === false) {
+  return (
+    Array.isArray(listOfLinks) &&
+    listOfLinks.map((link, index) => {
+      let LinkRenderingComponent = LinkComponent;
+      if (Array.isArray(link)) {
+        // Overide a specific LinkComponent.
+        LinkRenderingComponent = link[1];
+        // Use the first argument as original link information
+        link = link[0];
+      }
+      let linkContents = link.title;
+      if (useIcons) {
+        linkContents = <Icon icon={link.meta} color={iconColor} size={iconSize} />;
+      }
+      const Link = createLinkTag(LinkRenderingComponent, i13n);
+      const i13nProps = createI13nProps(link, i13n, { position: `${ i13nPosition }.${ index + 1 }` });
+      if (link.internal === false) {
+        return (
+          <li className="list__item" key={index}>
+            <Link
+              className="ec-footer__link ec-footer__link--external"
+              href={link.href}
+              target="_blank"
+              {...i13nProps}
+            >
+              {linkContents}
+            </Link>
+          </li>
+        );
+      }
       return (
         <li className="list__item" key={index}>
           <Link
-            className="ec-footer__link ec-footer__link--external"
+            className="ec-footer__link ec-footer--external"
             href={link.href}
-            target="_blank"
+            key={index}
             {...i13nProps}
           >
             {linkContents}
           </Link>
         </li>
       );
-    }
-    return (
-      <li className="list__item" key={index}>
-        <Link
-          className="ec-footer__link"
-          href={link.href}
-          key={index}
-          {...i13nProps}
-        >
-          {linkContents}
-        </Link>
-      </li>
-    );
-  });
+    })
+  );
 }
 
 export function targetIfNeeded({ internal }) {
