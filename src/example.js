@@ -2,7 +2,7 @@ import 'babel-polyfill';
 import React from 'react';
 import Footer from './';
 
-function overridingComponent(props) {
+export function overridingComponent(props) {
   function alertMe() {
     'You can add custom functionality';
   }
