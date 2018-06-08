@@ -162,12 +162,5 @@ describe('Footer', () => {
         rendered.find('.ec-footer__children').should.not.be.present();
       });
     });
-
-    // describe('Rendering with override link', () => {
-    //   it('renders with external link if provided', () => {
-    //     rendered = renderFooter();
-    //     rendered.find();
-    //   });
-    // });
   });
 });
