@@ -4,7 +4,7 @@ import Footer from './';
 
 export function overridingComponent(props) {
   function alertMe() {
-    'You can add custom functionality';
+    document.write('Test');
   }
   return (
     <button onClick={alertMe} {...props}>
