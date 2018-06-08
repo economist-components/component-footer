@@ -8,7 +8,7 @@ export function overridingComponent(props) {
   }
   return (
     <button onClick={alertMe} {...props}>
-    Overriden Link
+      Overriden Link
     </button>
   );
 }

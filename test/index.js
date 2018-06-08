@@ -96,17 +96,18 @@ describe('Footer', () => {
 
     it('renders with the supplied "business" content', () => {
       footer.find('.ec-footer__list--footnote .list').should.have.exactly(2).descendants('.list__item');
-      // console.log('HERE', footer.find('.ec-footer__list--footnote .ec-footer__link')[0]);
       footer.find('.ec-footer_list--footnote .ec-footer__link')
       .containsMatchingElement(
-      <a className="ec-footer__link ec-footer--external" href="node/21013093">
-        Terms of Use
-      </a>);
+        <a className="ec-footer__link ec-footer--external" href="node/21013093">
+          Terms of Use
+        </a>
+      );
       footer.find('.ec-footer__list--footnote .ec-footer__link')
       .containsMatchingElement(
-      <button className="ec-footer__link ec-footer--external" href="node/21554326">
-        Overriden Link
-      </button>);
+        <button className="ec-footer__link ec-footer--external" href="node/21554326">
+          Overriden Link
+        </button>
+      );
     });
 
 
