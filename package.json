@@ -112,7 +112,7 @@
     "@economist/component-grid": "^1.4.0",
     "@economist/component-icon": "^5.17.0",
     "@economist/component-palette": "^1.11.0",
-    "@economist/component-typography": "^3.5.0",
+    "@economist/component-typography": "^4.2.2",
     "prop-types": "^15.6.0"
   },
   "peerDependencies": {
@@ -134,7 +134,7 @@
     "browserify-istanbul": "^2.0.0",
     "chai": "^3.5.0",
     "chai-spies": "^0.7.1",
-    "chai-enzyme": "^1.0.0-beta.0",
+    "chai-enzyme": "1.0.0-beta.0",
     "coveralls": "^2.11.9",
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.0.1",
