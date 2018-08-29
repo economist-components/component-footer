@@ -1,6 +1,6 @@
 {
   "name": "@economist/component-footer",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "Basic footer with follow bar",
   "homepage": "https://github.com/economist-components/component-footer",
   "bugs": {
