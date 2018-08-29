@@ -112,7 +112,7 @@
     "@economist/component-grid": "^1.4.0",
     "@economist/component-icon": "^5.17.0",
     "@economist/component-palette": "^1.11.0",
-    "@economist/component-typography": "^3.5.0",
+    "@economist/component-typography": "^4.2.2",
     "prop-types": "^15.6.0"
   },
   "peerDependencies": {
